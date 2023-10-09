@@ -1,10 +1,9 @@
-@use "theme1" as theme1;
-@use "theme2" as theme2;
-@use "theme3" as theme3;
+@use "theme1";
+@use "theme2";
+@use "theme3";
 
 @mixin generate-container-styles($base-color, $color-box-text) {
   .box {
-    width: auto;
     height: 50px;
     margin: 5px;
     display: flex;
