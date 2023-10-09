@@ -1,0 +1,28 @@
+@use "theme1" as *;
+//@use "theme2" as *;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  .card {
+    min-width: 100px;
+    height: 50px;
+    margin-top: 2px;
+    border: 1px solid black;
+    padding: 10px;
+    @extend body;
+    &#base {
+      background-color: $base-color;
+    }
+    &#important {
+      background-color: $important-color;
+    }
+    &#warning {
+      background-color: $warning-color;
+    }
+  }
+}

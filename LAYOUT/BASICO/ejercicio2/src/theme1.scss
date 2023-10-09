@@ -1,0 +1,16 @@
+$base-color: #fc1919;
+$important-color: #520000;
+$warning-color: #d09696;
+$font-size: 16px;
+$border-radius: 0px;
+$shadow: -10px 10px 5px -1px rgba(0,0,0,0.18);
+
+.card {
+    font-size: $font-size;
+    border-radius: $border-radius;
+
+    &.secondary {
+        background-color: white;
+        box-shadow: $shadow;
+    }
+}
