@@ -1,0 +1,173 @@
+$primaryColor: white;
+$secondaryColor:#84d8a9;
+$backgroundColor: #d9f0ab;
+$backgroundColorFooter: #84d8a9;
+$backgroundColorMain:#f1f1f1;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: $backgroundColorMain;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 10px;
+
+        input {
+            margin-bottom: 4px;
+        }
+
+        div {
+            font-size: 0.6em;
+        }
+    }
+
+    .page-title {
+        background-color: $secondaryColor;
+        padding: 10px;
+        color: $primaryColor;
+    }
+}
+
+.page-container {
+    display: flex;
+    min-height: 100vh;
+
+    nav {
+        @extend header;
+        min-width: 120px;
+        background-color: #393e06;
+
+        .menu-container {
+            position: sticky;
+            top: 0;
+        }
+
+        .menu-title {
+            color: $primaryColor;
+            display: flex;
+            justify-content: center;
+            margin: 2px 0px;
+            font-size: 0.8em;
+
+        }
+
+        ul {
+            width: 100%;
+            @extend header;
+            list-style: none;
+
+            li {
+                background-color: $backgroundColor;
+                margin-top: 2px;
+                font-size: 0.6em;
+                padding: 2px;
+            }
+        }
+
+    }
+
+    main {
+        background-color: $backgroundColorMain;
+
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .card {
+                min-width: 150px;
+                border: 1px solid;
+                border-radius: 5px;
+                @extend header;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+                padding: 10px 0px;
+                background-color: $primaryColor;
+
+                img {
+                    border-radius: 50%;
+                }
+
+                .member-name {
+                    font-size: 0.6em;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $backgroundColorFooter;
+    color: $primaryColor;
+    font-size: 0.6em;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        .toolbar {
+            display: none;
+        }
+    }
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+
+        nav {
+            position: sticky;
+            top: 0;
+
+            ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                padding: 10px 0px;
+
+                li {
+                    text-align: center;
+                    margin: 0px 5px;
+                    padding: 10px 15px;
+                }
+            }
+
+            .menu-title {
+                display: none;
+            }
+        }
+
+        main {
+            .list {
+                display: flex;
+                flex-direction: column;
+                .card {
+                    border: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    padding-left: 10px;
+
+                    img{
+                        margin-right: 10px;
+                    }
+                 }
+            }
+        }
+    }
+
+
+
+}
