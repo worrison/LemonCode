@@ -1,6 +1,7 @@
 import "./01-practica/ejercicio-101.js";
 import "./01-practica/ejercicio-102.js";
 import "./01-practica/ejercicio-103.js";
+import "./01-practica/ejercicio-104.js";
 import "./01-practica/ejercicio-114.js";
 import "./02-entregables/ejercicio-01.js";
 import "./02-entregables/ejercicio-02.js";
