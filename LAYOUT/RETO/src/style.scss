@@ -1,0 +1,213 @@
+$font-size: 16px;
+$primary-font-color: #ffffff;
+$background-color: #141414;
+$resaltar:red;
+$hover-color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+* {
+    font-size: $font-size;
+    font-family: 'Jost', sans-serif;
+    margin: 3px;
+    padding: 0px;
+}
+
+body {
+    background-color: $background-color;
+    color: $primary-font-color;
+}
+
+img:hover {
+    transform: scale(1.2);
+    transition: transform 1s;
+    max-width: 100%;
+    cursor: pointer
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 150px;
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+
+        .platform-title {
+            margin-left: 5px;
+            font-size: 2em;
+        }
+    }
+
+    .header-buttons {
+        display: flex;
+        align-items: center;
+        width: auto;
+        justify-content: space-around;
+
+        div {
+            margin-right: 5px;
+            font-size: 1.5em;
+            border-radius: 10px;
+            padding: 10px;
+
+            &:hover {
+                cursor: pointer;
+                color: $hover-color;
+                background-color: $primary-font-color;
+
+            }
+        }
+    }
+}
+
+.section-title {
+    font-size: 2rem;
+
+    #top-text::after {
+        content: "5";
+        color: $resaltar;
+        font-size: 2em;
+    }
+}
+
+.top {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(5, 1fr);
+
+    .top-item {
+        display: flex;
+        min-width: 225px;
+
+        img {
+            width: 100%;
+        }
+
+        &:nth-child(1) {
+            order: 5;
+        }
+
+        &:nth-child(2) {
+            order: 4;
+        }
+
+        &:nth-child(3) {
+            order: 3;
+        }
+
+        &:nth-child(4) {
+            order: 2;
+        }
+
+        &:nth-child(5) {
+            order: 1;
+        }
+    }
+}
+
+.first {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    .item {
+        display: flex;
+        min-width: 250px;
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+    }
+
+}
+
+.second {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    .item {
+        min-width: 250px;
+        display: flex;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    .first {
+        & :nth-child(n+5) {
+            grid-column: span 2;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .first {
+        & :nth-child(n+5) {
+            grid-column: span 1;
+        }
+    }
+
+    header {
+        justify-content: space-around;
+
+        .platform-title {
+            display: none;
+        }
+    }
+
+    .section-title {
+        font-size: 2rem;
+
+        #top-text::after {
+            content: "3";
+            color: $resaltar;
+            font-size: 2em;
+        }
+    }
+
+    .top {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .top-item:nth-child(-n+2) {
+        display: none;
+    }
+
+    .first {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .second {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .top {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .top-item:nth-child(-n+2) {
+        display: flex;
+    }
+
+    .first {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .second {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
