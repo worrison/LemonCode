@@ -173,40 +173,20 @@ header {
             font-size: 2em;
         }
     }
-
-    .top {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .top-item:nth-child(-n+2) {
         display: none;
     }
-
-    .first {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .second {
+    .second,.first,.top {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 680px) {
-    .top {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
     .top-item:nth-child(-n+2) {
         display: flex;
     }
-
-    .first {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .second {
+    .second,.first,.top {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
