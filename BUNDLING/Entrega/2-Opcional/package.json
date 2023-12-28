@@ -7,7 +7,8 @@
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
     "start:dev": "rimraf dist && cross-env NODE_ENV=development parcel",
-    "build": "rimraf dist && cross-env NODE_ENV=production  parcel build --reporter @parcel/reporter-bundle-analyzer",
+    "start:prod": "rimraf dist && cross-env NODE_ENV=production parcel build",
+    "build": "rimraf dist && cross-env NODE_ENV=production parcel build --reporter @parcel/reporter-bundle-analyzer",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch"
   },
@@ -24,11 +25,12 @@
     "parcel": "^2.10.3",
     "parcel-plugin-bundle-visualiser": "^1.2.0",
     "process": "^0.11.10",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "rimraf": "^5.0.5"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rimraf": "^5.0.5"
+    "react-dom": "^18.2.0"
+    
   }
 }
