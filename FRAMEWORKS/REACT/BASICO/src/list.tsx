@@ -56,8 +56,6 @@ export const ListPage: React.FC = () => {
   }, [triggerFetch]);
   const llamadaApi = () => {
     setText(inputValue); // Establece el valor del input en el contexto
-    console.log("valor de input", inputValue);
-    console.log("valor de text", text);
     setTriggerFetch(true); // Establece triggerFetch a true cuando se hace clic en el botón
   };
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
