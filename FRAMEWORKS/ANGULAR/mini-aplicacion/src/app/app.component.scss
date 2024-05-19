@@ -1,0 +1,22 @@
+$primary-color: #f2f2f2;
+$secondary-color: #333;
+$highlight-color: red;
+$hover-color: green;
+
+.header {
+  background-color: $primary-color;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: $secondary-color;
+
+  a {
+    color: $highlight-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
