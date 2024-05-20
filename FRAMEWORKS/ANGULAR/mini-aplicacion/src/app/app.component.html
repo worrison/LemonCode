@@ -1,5 +1,8 @@
-<app-header></app-header>
-<!-- <app-header-private></app-header-private> -->
+<app-header *ngIf="!authService.isLogged(); else loggedIn"></app-header>
+
+<ng-template #loggedIn>
+  <app-header-private></app-header-private>
+</ng-template>
 
 <router-outlet />
 <app-footer></app-footer>
