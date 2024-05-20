@@ -3,6 +3,8 @@ import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angula
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,4 +16,14 @@ import {MatButtonModule} from '@angular/material/button';
 export class LoginComponent {
   userNameFormControl = new FormControl('', [Validators.required, Validators.minLength(4)]);
   userPasswordFormControl = new FormControl('', [Validators.required, Validators.minLength(6)]);
+
+  constructor(private authService: AuthService, private router: Router) { } // Inyecta el servicio de autenticación
+  login(): void {
+    if (this.authService.login(this.userNameFormControl.value ?? '', this.userPasswordFormControl.value ?? '')) {
+      console.log('Login correcto');
+      this.router.navigate(['/dashboard']);
+    } else {
+      console.log('Login incorrecto');
+    }
+  }
 }
