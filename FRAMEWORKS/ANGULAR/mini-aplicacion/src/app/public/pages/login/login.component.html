@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="login">
+  <form class="example-form">
+    <h1>Login</h1>
+    <mat-form-field class="example-full-width">
+      <mat-label>Username</mat-label>
+      <input type="text" matInput [formControl]="userNameFormControl" placeholder="usuario">
+      @if ( userNameFormControl.hasError('minlength')) {
+      <mat-error>Introduce un usuario valido <strong>min. 4 caracteres</strong></mat-error>
+      }
+      @if (userNameFormControl.hasError('required')) {
+      <mat-error>Usuario es <strong>rquerido </strong></mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput [formControl]="userPasswordFormControl" placeholder="password">
+      @if ( userPasswordFormControl.hasError('minlength')) {
+      <mat-error>Introduce una password válida <strong>min 6 caracteres</strong></mat-error>
+      }
+      @if (userPasswordFormControl.hasError('required')) {
+      <mat-error>password es <strong>requerida</strong></mat-error>
+      }
+    </mat-form-field>
+    <button mat-flat-button color="primary">Login</button>
+  </form>
+</div>

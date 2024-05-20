@@ -1,4 +1,14 @@
-div{
+footer{
+  display: flex;
+  justify-content: center;
   background-color: black;
-  min-height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  p {
+    margin: 0;
+    color: white;
+  }
+
 }
