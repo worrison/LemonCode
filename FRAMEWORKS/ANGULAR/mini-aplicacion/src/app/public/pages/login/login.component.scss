@@ -1,5 +1,6 @@
 .login {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 80vh; /* Esto hace que el contenedor ocupe toda la altura de la vista */
@@ -12,4 +13,11 @@
 
 .example-full-width {
   width: 100%;
+}
+#card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
