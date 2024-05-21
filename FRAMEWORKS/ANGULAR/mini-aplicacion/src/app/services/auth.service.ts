@@ -14,13 +14,16 @@ export class AuthService {
     // Por ahora, solo vamos a simularlo.
     if (username === 'victor' && password === 'angular') {
       this.loggedIn = true;
+      localStorage.setItem('loggedIn', 'true');
       return true;
     }
+    localStorage.setItem('loggedIn', 'false');
     return false;
   }
 
   logout(): void {
     this.loggedIn = false;
+    localStorage.setItem('loggedIn', 'false');
     this.router.navigate(['/login']);
   }
 
