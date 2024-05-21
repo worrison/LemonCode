@@ -14,16 +14,19 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  mensaje = '';
   userNameFormControl = new FormControl('', [Validators.required, Validators.minLength(4)]);
   userPasswordFormControl = new FormControl('', [Validators.required, Validators.minLength(6)]);
 
   constructor(private authService: AuthService, private router: Router) { } // Inyecta el servicio de autenticación
   login(): void {
     if (this.authService.login(this.userNameFormControl.value ?? '', this.userPasswordFormControl.value ?? '')) {
-      console.log('Login correcto');
+      console.log('Login correcto',this.mensaje);
+      this.mensaje="Login correcto";
       this.router.navigate(['/dashboard']);
     } else {
-      console.log('Login incorrecto');
+      this.mensaje="Login incorrecto";
+      console.log('Login incorrecto',this.mensaje);
     }
   }
 }

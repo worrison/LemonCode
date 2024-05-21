@@ -3,5 +3,8 @@
   <a mat-button routerLink="/home">Galería</a>
   <a mat-button routerLink="/home">Crud</a>
   <a mat-button routerLink="/home">Profile</a>
- <a mat-button routerLink="/home"> Hola Victor - LogOut</a>
+ <a mat-button routerLink="/home"> {{getUsername()}} </a>
+ <button mat-icon-button (click)="logout()">
+  <mat-icon>logout</mat-icon>
+</button>
 </mat-toolbar>
