@@ -15,6 +15,7 @@ export class AuthService {
     if (username === 'victor' && password === 'angular') {
       this.loggedIn = true;
       localStorage.setItem('loggedIn', 'true');
+      console.log('Usuario autenticado', this.loggedIn);
       return true;
     }
     localStorage.setItem('loggedIn', 'false');
@@ -28,6 +29,7 @@ export class AuthService {
   }
 
   isLogged(): boolean {
+    console.log('Usuario autenticado', this.loggedIn);
     return this.loggedIn;
   }
   getUsername(): string {
