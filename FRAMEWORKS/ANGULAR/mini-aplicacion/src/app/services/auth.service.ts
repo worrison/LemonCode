@@ -7,23 +7,24 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(private router: Router) { }
-  loggedIn = false;
+
+  loggedIn = !!localStorage.getItem('loggedIn');
 
   login(username: string, password: string): boolean {
-    // Aquí normalmente harías una solicitud HTTP para autenticar al usuario.
-    // Por ahora, solo vamos a simularlo.
     if (username === 'victor' && password === 'angular') {
       this.loggedIn = true;
       localStorage.setItem('loggedIn', 'true');
       return true;
     }
-    localStorage.setItem('loggedIn', 'false');
+    this.loggedIn = false;
+    localStorage.removeItem('loggedIn');
     return false;
   }
 
   logout(): void {
     this.loggedIn = false;
-    localStorage.setItem('loggedIn', 'false');
+    // localStorage.setItem('loggedIn', 'false');
+    localStorage.removeItem('loggedIn');
     this.router.navigate(['/login']);
   }
 
