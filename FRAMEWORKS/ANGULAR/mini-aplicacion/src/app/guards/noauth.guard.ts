@@ -13,10 +13,8 @@ export class NoAuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
     if (!this.authService.isLogged()) {
-      console.log('NoAuthGuard: Usuario no autenticado',this.authService.isLogged());
       return true;
     } else {
-      console.log('NoAuthGuard: Usuario autenticado', this.authService.isLogged())
       this.router.navigate(['/dashboard']);
       return false;
     }
