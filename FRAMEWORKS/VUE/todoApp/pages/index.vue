@@ -13,7 +13,4 @@ const { newTask,addTask} = useTodo();
 </script>
 
 <style>
-.completed {
-  text-decoration: line-through;
-}
 </style>
