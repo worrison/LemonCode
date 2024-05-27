@@ -10,7 +10,7 @@ export function useTodo() {
   // Computed para obtener la lista de tareas desde el store
   const tasks = computed(() => todoStore.tasks);
 
-  // Método para agregar una tarea
+  // add task
   const addTask = () => {
     if (newTask.value.trim()) {
       todoStore.addTask(newTask.value);
@@ -18,12 +18,12 @@ export function useTodo() {
     }
   };
 
-  // Método para eliminar una tarea
+  // Delete task
   const removeTask = (id: number) => {
     todoStore.removeTask(id);
   };
 
-  // Método para alternar la compleción de una tarea
+  // Complete task
   const toggleTaskCompletion = (id: number) => {
     todoStore.toggleTaskCompletion(id);
   };

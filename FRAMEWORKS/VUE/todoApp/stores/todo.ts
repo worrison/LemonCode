@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
+import type { Task } from '~/types/interfaces';
 
 export const useTodoStore = defineStore('todo', () => {
-  const tasks = ref<{ id: number, name: string, completed: boolean }[]>([]);
+  const tasks = ref<Task[]>([]);
 
   const addTask = (name: string) => {
     tasks.value.push({ id: Date.now(), name, completed: false });
