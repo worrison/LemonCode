@@ -2,15 +2,14 @@
     <li>
       <span :class="{ completed: task.completed }">{{ task.name }}</span>
       <button @click="toggleCompletion">
-        {{ task.completed ? 'Undo' : 'Complete' }}
+        {{ task.completed ? 'Deshacer' : 'Completar' }}
       </button>
-      <button @click="remove">Delete</button>
+      <button @click="remove">Borrar</button>
     </li>
   </template>
   
   <script setup>
-  import { defineProps, defineEmits } from 'vue';
-  
+ 
   const props = defineProps({
     task: {
       type: Object,
@@ -30,7 +29,4 @@
   </script>
   
   <style scoped>
-  .completed {
-    text-decoration: line-through;
-  }
   </style>

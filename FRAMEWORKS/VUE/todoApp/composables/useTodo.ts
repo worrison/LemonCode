@@ -1,6 +1,3 @@
-import { ref, computed } from 'vue';
-import { useTodoStore } from '~/stores/todo';
-
 export function useTodo() {
   const todoStore = useTodoStore();
   

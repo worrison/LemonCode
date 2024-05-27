@@ -1,0 +1,29 @@
+@mixin button-styles($color) {
+    background-color: $color;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  
+    &:hover {
+      background-color: darken($color, 10%);
+    }
+  }
+
+  @mixin respond-to($breakpoint) {
+    @if $breakpoint == sm {
+      @media (max-width: $breakpoint-sm) { @content; }
+    } @else if $breakpoint == md {
+      @media (max-width: $breakpoint-md) { @content; }
+    } @else if $breakpoint == lg {
+      @media (max-width: $breakpoint-lg) { @content; }
+    } @else if $breakpoint == xl {
+      @media (max-width: $breakpoint-xl) { @content; }
+    }
+  }

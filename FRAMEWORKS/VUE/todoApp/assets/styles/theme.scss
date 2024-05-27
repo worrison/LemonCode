@@ -1,0 +1,34 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+    font-family: $font-family;
+    font-size: $base-font-size;
+    color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: $secondary-color;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 400px;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+button {
+    @include button-styles($primary-color);
+}

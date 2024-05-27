@@ -11,8 +11,6 @@
   </template>
   
   <script setup>
-  import { useTodo } from '~/composables/useTodo';
-  import TodoItem from '~/components/TodoItem.vue';
   
   const {tasks,removeTask, toggleTaskCompletion} = useTodo();
   </script>
