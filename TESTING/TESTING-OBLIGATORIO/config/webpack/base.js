@@ -15,7 +15,7 @@ module.exports = merge(
         scenes: helpers.resolveFromRootPath('src/scenes'),
         'common-app': helpers.resolveFromRootPath('src/common-app'),
       },
-      extensions: ['.js', '.ts', '.tsx'],
+      extensions: ['.js', 'jsx','.ts', '.tsx'],
     },
     entry: {
       app: ['regenerator-runtime/runtime', './index.tsx'],
