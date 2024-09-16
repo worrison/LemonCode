@@ -23,6 +23,8 @@ describe('mapProjectFromApiToVm', () => {
 
     // Assert
     expect(result).toEqual(viewModel.createEmptyProject());
+
+
   });
 
   it('debería mapear el proyecto del modelo de API al ViewModel', () => {
@@ -58,7 +60,7 @@ describe('mapProjectFromApiToVm', () => {
     expect(result).toEqual(expectedVmProject);
   });
 
-  it('should map employee list correctly from API to ViewModel', () => {
+  it('debería mapear correctamente la lista de empleados de la API al ViewModel', () => {
     // Arrange
     const apiProject: apiModel.Project = {
       id: '1',
