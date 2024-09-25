@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - feature/laboratorio-testing-opcional
+  pull_request:
+    branches:
+      - feature/laboratorio-testing-opcional
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run unit tests
+      - name: Run tests
+        run: npm run test:ci
