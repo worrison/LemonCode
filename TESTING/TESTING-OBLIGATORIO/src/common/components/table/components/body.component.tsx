@@ -13,13 +13,17 @@ export const BodyComponent: React.FunctionComponent<Props> = (props) => {
   const { rows, prepareRow, rowRenderer } = props;
   return (
     <TableBody>
-      {rows.map((row) => {
-        prepareRow(row);
-        return rowRenderer({
-          ...row.getRowProps(),
-          row: row.original,
-        });
-      })}
-    </TableBody>
+    {rows.map((row, index) => {
+      prepareRow(row);
+      return (
+        <React.Fragment key={row.id || row.original.id || index}> {/* Usa una clave única */}
+          {rowRenderer({
+            ...row.getRowProps(),
+            row: row.original,
+          })}
+        </React.Fragment>
+      );
+    })}
+  </TableBody>
   );
 };

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import { CellComponent } from './cell.component';
 
@@ -8,9 +9,15 @@ describe('common/table/CellComponent', () => {
 
     // Act
     const { getByText } = render(
-      <CellComponent>
-        <h1>Test content</h1>
-      </CellComponent>
+      <table>
+        <tbody>
+          <tr>
+            <CellComponent>
+              <h1>Test content</h1>
+            </CellComponent>
+          </tr>
+        </tbody>
+      </table>
     );
 
     // Assert

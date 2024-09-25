@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { RowComponent } from './row.component';
 
 describe('common/table/RowComponent', () => {
@@ -10,16 +11,20 @@ describe('common/table/RowComponent', () => {
       'data-testid': 'test-row',
     };
 
-    // Act
-    const { getByText, getByTestId } = render(
-      <RowComponent {...props}>
-        <td>{'Test rowData'}</td>
-      </RowComponent>
-    );
+   // Act
+   const { getByText, getByTestId } = render(
+    <table>
+      <tbody>
+        <RowComponent {...props}>
+          <td>{'Test rowData1'}</td>
+        </RowComponent>
+      </tbody>
+    </table>
+  );
 
     // Assert
     expect(getByTestId(props['data-testid'])).toHaveClass(props.className);
-    expect(getByText('Test rowData')).toBeInTheDocument();
+    expect(getByText('Test rowData1')).toBeInTheDocument();
   });
 
   it('should render a row component with two cells', () => {
@@ -28,16 +33,19 @@ describe('common/table/RowComponent', () => {
       className: 'test-className',
     };
 
-    // Act
-    const { getByText } = render(
+ // Act
+ const { getByText, getByTestId } = render(
+  <table>
+    <tbody>
       <RowComponent {...props}>
-        <td>{'Test rowData 1'}</td>
-        <td>{'Test rowData 2'}</td>
+        <td>{'Test rowData2'}</td>
       </RowComponent>
-    );
+    </tbody>
+  </table>
+);
 
     // Assert
-    expect(getByText('Test rowData 1')).toBeInTheDocument();
-    expect(getByText('Test rowData 2')).toBeInTheDocument();
+    expect(getByText('Test rowData2')).toBeInTheDocument();
+    expect(getByText('Test rowData2')).toBeInTheDocument();
   });
 });

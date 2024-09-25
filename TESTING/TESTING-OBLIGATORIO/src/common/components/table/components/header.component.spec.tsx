@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { HeaderGroup } from 'react-table';
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { HeaderComponent } from './header.component';
 
 describe('common/table/HeaderComponent', () => {
@@ -21,7 +22,11 @@ describe('common/table/HeaderComponent', () => {
     };
 
     // Act
-    const { getByText } = render(<HeaderComponent {...props} />);
+    const { getByText } = render(
+      <table>
+        <HeaderComponent {...props} />
+      </table>
+    );
 
     // Assert
     expect(getByText('Test label')).toBeInTheDocument();
@@ -53,7 +58,9 @@ describe('common/table/HeaderComponent', () => {
     };
 
     // Act
-    const { getByText } = render(<HeaderComponent {...props} />);
+    const { getByText } = render(<table>
+      <HeaderComponent {...props} />
+    </table>);
 
     // Assert
     expect(getByText('Test label 1')).toBeInTheDocument();

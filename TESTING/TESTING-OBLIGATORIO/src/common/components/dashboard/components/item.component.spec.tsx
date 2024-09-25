@@ -5,6 +5,7 @@ import { renderWithRouter } from '../../../test';
 import { Route } from 'react-router-dom';
 import { ItemComponent, ClassesProps } from './item.component';
 import { DashboardItemProps } from '../dashboard.vm';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('common/dashboard/ItemComponent', () => {
   it('should be render as expected passing required properties', () => {

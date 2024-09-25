@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { PeopleAlt as PeopleAltIcon } from '@mui/icons-material';
-import { Route } from 'react-router-dom';
 import { renderWithRouter } from '../../test';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardItemProps } from './dashboard.vm';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('common/DashboardComponent', () => {
   it('should be render as expected passing required properties', () => {
