@@ -27,8 +27,16 @@ describe('common/table/BodyComponent', () => {
       prepareRow: jest.fn(),
     };
 
+    // // Act
+    // const { getByText } = render(<BodyComponent {...props} />);
     // Act
-    const { getByText } = render(<BodyComponent {...props} />);
+    const { getByText } = render(
+      <table>
+        <tbody>
+          <BodyComponent {...props} />
+        </tbody>
+      </table>
+    );
 
     // Assert
     expect(getByText('1')).toBeInTheDocument();
