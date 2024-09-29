@@ -12,7 +12,7 @@ interface BaseRoutes {
 
 const baseRoutes: BaseRoutes = {
   root: '/',
-  login: '/login',
+  login: '/',
   submoduleList: '/submodule-list',
   projects: '/projects',
   editProject: '/projects/:id',

@@ -14,7 +14,8 @@
     "test": "jest -c ./config/test/jest.js",
     "test:ci": "jest --ci --coverage",
     "test:watch": "npm run test -- --watchAll -i",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test:e2e": "cypress open"
   },
   "repository": {
     "type": "git",
