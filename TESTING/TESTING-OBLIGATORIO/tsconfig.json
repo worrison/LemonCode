@@ -13,6 +13,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "baseUrl": "./src/",
+    "types": ["cypress"],
     "paths": {
       "common-app": ["common-app"],
       "common": ["common"],
@@ -23,5 +24,5 @@
       "@emotion/css": ["node_modules/@emotion/css"]
     }
   },
-  "include": ["./src/**/*", "./config/test/setup.ts", "./global.types.d.ts"]
+  "include": ["./src/**/*", "./config/test/setup.ts", "./global.types.d.ts","cypress/**/*.ts"]
 }
