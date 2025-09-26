@@ -1,0 +1,16 @@
+[
+  {
+    "id": 2,
+    "characterId": 2,
+    "sentence": "prueba mortytt",
+    "createdAt": "2025-09-26T19:21:24.823Z",
+    "updatedAt": "2025-09-26T19:21:37.294Z"
+  },
+  {
+    "id": 3,
+    "characterId": 4,
+    "sentence": "una prueba más",
+    "createdAt": "2025-09-26T19:21:45.762Z",
+    "updatedAt": "2025-09-26T19:21:45.762Z"
+  }
+]
