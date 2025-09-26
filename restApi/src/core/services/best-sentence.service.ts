@@ -28,8 +28,8 @@ class BestSentenceServiceImpl implements BestSentenceService {
   }
 
   async saveBestSentence(
-    characterId: number, 
-    sentence: string, 
+    characterId: number,
+    sentence: string,
     strategy: SaveStrategy = this.defaultStrategy
   ): Promise<void> {
     const errors: string[] = [];
@@ -46,7 +46,7 @@ class BestSentenceServiceImpl implements BestSentenceService {
       try {
         // Verificar si ya existe
         const existing = await bestSentenceApi.getByCharacterId(characterId);
-        
+
         if (existing) {
           await bestSentenceApi.update(characterId, sentence);
         } else {
@@ -70,7 +70,7 @@ class BestSentenceServiceImpl implements BestSentenceService {
   }
 
   async deleteBestSentence(
-    characterId: number, 
+    characterId: number,
     strategy: SaveStrategy = this.defaultStrategy
   ): Promise<void> {
     const errors: string[] = [];

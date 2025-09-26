@@ -30,7 +30,7 @@ export const localStorageService = {
     try {
       const sentences = this.getAllBestSentences();
       const existingIndex = sentences.findIndex(s => s.characterId === characterId);
-      
+
       const bestSentence: BestSentence = {
         characterId,
         sentence,

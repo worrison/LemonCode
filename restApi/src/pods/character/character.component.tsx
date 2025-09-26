@@ -121,9 +121,9 @@ return (
 
 <section>
 <h3>Best sentence</h3>
-<textarea 
-rows={3} 
-value={bestSentence} 
+<textarea
+rows={3}
+value={bestSentence}
 onChange={e => setBestSentence(e.target.value)}
 placeholder="Enter the best sentence from this character..."
 style={{ width: '100%', padding: 8, marginBottom: 8 }}
